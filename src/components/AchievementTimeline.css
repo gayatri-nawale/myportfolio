@@ -1,0 +1,104 @@
+/* Mobile: vertical timeline, node on the left connected by a line */
+.achv-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.achv-track-line {
+  position: absolute;
+  z-index: 0;
+  background-color: #D9D9D9;
+  top: 22px;
+  bottom: 22px;
+  left: 22px;
+  width: 1px;
+}
+
+.achv-item {
+  position: relative;
+  z-index: 1;
+  padding-left: 3.5rem;
+  text-align: left;
+}
+
+.achv-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 2px solid #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.achv-item:hover .achv-node {
+  transform: scale(1.1);
+  border-color: #7C8B6F;
+}
+
+.achv-card {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+/* Tablet: 3 + 2 grid, nodes centered above cards, no connecting line */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .achv-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+  }
+  .achv-track-line {
+    display: none;
+  }
+  .achv-item {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+  .achv-node {
+    position: static;
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Desktop: 5 in a row, connected by a full-width horizontal line */
+@media (min-width: 1024px) {
+  .achv-track {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+  .achv-track-line {
+    display: block;
+    top: 22px;
+    bottom: auto;
+    left: 6%;
+    right: 6%;
+    width: auto;
+    height: 1px;
+  }
+  .achv-item {
+    flex: 1;
+    min-width: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .achv-node {
+    position: static;
+    margin-bottom: 1.25rem;
+  }
+}

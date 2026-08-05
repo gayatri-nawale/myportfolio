@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #FAFAF8;
+  --color-ink: #111111;
+  --color-sage: #7C8B6F;
+  --color-edge: #E5E5E0;
+  --color-dim: #888888;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #FAFAF8;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TypeAnimation blinking cursor */
+.type-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #7C8B6F;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
