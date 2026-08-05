@@ -26,9 +26,7 @@ export default function AchievementTimeline() {
           >
             Achievements & Certifications
           </h2>
-          <p className="text-sm max-w-xl mx-auto" style={{ color: '#888888' }}>
-            Recognition, certifications, and research that showcase my technical expertise and achievements.
-          </p>
+          
           <div
             className="mt-4 mx-auto w-10 h-0.75 rounded-full"
             style={{ backgroundColor: '#7C8B6F' }}
